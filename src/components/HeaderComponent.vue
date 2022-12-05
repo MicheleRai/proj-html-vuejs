@@ -7,16 +7,20 @@
           alt="logo"
         >
         <div class="text">
-          <a
-            v-for="part in navParts"
-            :key="part"
-            href="!"
-          >
-            {{ part }} <font-awesome-icon
-              class="icona"
-              icon="fa-solid fa-chevron-down"
-            />
-          </a>
+          <ul>
+            <li
+              v-for="part in navParts"
+              :key="part"
+            >
+              <a href="!">
+                {{ part }}
+                <font-awesome-icon
+                  class="icona"
+                  icon="fa-solid fa-chevron-down"
+                />
+              </a>
+            </li>
+          </ul>
           <a
             href="!"
             class="carrello"
@@ -28,14 +32,43 @@
             <div
               class="contenuto-carrello"
               v-bind="carrello"
-            >{{ carrello }}</div>
+            >
+              {{ carrello }}
+            </div>
           </a>
           <a href="!">
             <font-awesome-icon icon="fa-solid fa-circle-user" />
-            .
+            <p>.</p>
           </a>
+          <label for="s">
+            <input
+              type="text"
+              placeholder="Search..."
+            >
+            <font-awesome-icon
+              class="lente"
+              icon="fa-solid fa-magnifying-glass"
+            />
+          </label>
         </div>
       </nav>
+      <div class="jumbo">
+        <div class="jumbo-text">
+          <h1>Complete Your Dreams in JavaS Programming</h1>
+          <p>
+            Learn any coding program in distance and for a
+            resonable fee. You don't have to struggle alone,
+            you've got our assistance and help.
+          </p>
+          <button><font-awesome-icon icon="fa-solid fa-download" /> Download free E-book</button>
+        </div>
+        <div class="jumbo-img">
+          <img
+            src="images\home-5-hero-image-279x300.png"
+            alt="jumbo"
+          >
+        </div>
+      </div>
     </div>
   </header>
 </template>
@@ -57,7 +90,7 @@ export default {
     background-color: #E9E6E3;
     nav{
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       height: 70px;
       img{
@@ -65,15 +98,23 @@ export default {
       }
       .text{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        gap: 2rem;
+        gap: 1rem;
+        ul{
+          display: flex;
+          gap: .7rem;
+          list-style: none;
+        }
         a{
           text-decoration: none;
           color: #3F3A64;
           .icona{
             margin-left: .2rem;
             font-size: 15px;
+          }
+          p{
+            display: none;
           }
         }
         .carrello{
@@ -92,6 +133,54 @@ export default {
             top: -15px;
             right: -12px;
           }
+        }
+        label{
+          position: relative;
+          top: -7px;
+          input{
+            border: 1px solid white;
+            padding: .7rem;
+            border-radius: 5px 0 0 5px;
+          }
+          .lente{
+            color: green;
+            background-color: white;
+            padding: .75rem;
+            position: relative;
+            top: 14px;
+            border-radius: 0 5px 5px 0;
+          }
+        }
+      }
+    }
+    .jumbo{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem 0;
+      .jumbo-text{
+        flex: 0 0 40%;
+        h1{
+        color: #3F3A64;
+        font-size: 60px;
+        padding-bottom: 2rem;
+        }
+        p{
+          color: gray;
+          padding-bottom: 2rem;
+        }
+        button{
+          color: white;
+          background-color: green;
+          padding: 1rem 2rem;
+          border: 0;
+          border-radius: 7px;
+        }
+      }
+      .jumbo-img{
+        flex: 0 0 40%;
+        img{
+          width: 100%;
         }
       }
     }
