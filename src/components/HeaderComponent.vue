@@ -125,7 +125,7 @@ export default {
             font-size: 20px;
           }
           .contenuto-carrello{
-            background-color: green;
+            background-color: #62C5B5;
             color: white;
             border-radius: 100%;
             text-align: center;
@@ -173,7 +173,7 @@ export default {
         }
         button{
           color: white;
-          background-color: green;
+          background-color: #20AD96;
           padding: 1rem 2rem;
           border: 0;
           border-radius: 7px;

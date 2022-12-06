@@ -25,6 +25,41 @@
         </div>
       </div>
     </div>
+    <div class="second-section">
+      <div class="second-sec-image">
+        <img
+          src="images\about-us-03-image-01-215x300.png"
+          alt="career-image"
+        >
+      </div>
+      <div class="second-sec-text">
+        <p>DREAM WITH <strong>MAXCOACH</strong></p>
+        <h1 class="s-s-h">
+          Construct A
+        </h1>
+        <span>Stunning</span>
+        <h1>Career Prospective</h1>
+        <div class="dropdown">
+          <div
+            v-for="(objProspettiva, i) in prospettive"
+            :key="(objProspettiva.i)"
+          >
+            <p
+              class="title"
+              @click="trigger(i)"
+              @keypress="trigger(i)"
+            >
+              <strong>{{ objProspettiva.title }}</strong>
+              <font-awesome-icon icon="fa-solid fa-circle-plus" />
+              <font-awesome-icon icon="fa-solid fa-circle-minus" />
+            </p>
+            <p v-show="objProspettiva.toggle">
+              {{ objProspettiva.text }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -55,7 +90,29 @@ export default {
           text: 'Have apassion for graphics and arts? Show your talents with confidence and self-assertivenes.',
         },
       ],
+      prospettive: [
+        {
+          title: 'Multiple Platforms Supported for Teaching & Studyng',
+          text: 'MaxCoach support the act of teaching and learning on multiple plattforms like online and ofline via material downolads. We know things aren?t supposed to be devoured in a short time, you can always acces our knowledge base from any device.',
+          toggle: true,
+        },
+        {
+          title: 'Multiple Course Partecipation at the Same Time',
+          text: 'MaxCoach support the act of teaching and learning on multiple plattforms like online and ofline via material downolads. We know things aren?t supposed to be devoured in a short time, you can always acces our knowledge base from any device.',
+          toggle: false,
+        },
+        {
+          title: 'Track Study Progress & Deliver Prompt Feedback',
+          text: 'MaxCoach support the act of teaching and learning on multiple plattforms like online and ofline via material downolads. We know things aren?t supposed to be devoured in a short time, you can always acces our knowledge base from any device.',
+          toggle: false,
+        },
+      ],
     };
+  },
+  methods: {
+    trigger(i) {
+      this.objProspettiva[i].toggle = !this.objProspettiva[i].toggle;
+    },
   },
 };
 </script>
@@ -75,7 +132,7 @@ export default {
     margin-bottom: 5rem;
   }
   span{
-    color: green;
+    color: #62C5B5;
     font-size: 50px;
   }
   .corsi{
@@ -90,5 +147,42 @@ export default {
     color: #3F3A64;
     }
   }
+}
+.second-section{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+  .second-sec-image{
+    flex: 0 0 45%;
+  }
+  .second-sec-text{
+    flex: 0 0 45%;
+    p{
+      color: gray;
+    }
+    h1{
+      color: #3F3A64;
+      font-size: 50px;
+    }
+    .s-s-h{
+      display: inline-block;
+    }
+    span{
+      color: #62C5B5;
+      font-size: 45px;
+    }
+    .dropdown{
+      p{
+        display: flex;
+        justify-content: space-between;
+        background-color: #62C5B5;
+        color: white;
+        padding: 1rem .7rem;
+        border-radius: 5px;
+      }
+    }
+  }
+
 }
 </style>
