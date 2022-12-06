@@ -88,6 +88,8 @@ export default {
 <style lang="scss" scoped>
   header{
     background-color: #E9E6E3;
+    background-image: url(../../public/images/jumbo-overlay.svg);
+
     nav{
       display: flex;
       justify-content: space-between;
@@ -183,6 +185,9 @@ export default {
           width: 100%;
         }
       }
+    }
+    .overlay{
+      transform: rotate(180deg);
     }
   }
 </style>
