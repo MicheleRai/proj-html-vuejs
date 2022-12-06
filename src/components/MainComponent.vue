@@ -233,6 +233,7 @@
           <div
             v-for="objEvent in events"
             :key="objEvent.i"
+            class="card"
           >
             <div class="text">
               <p>
@@ -242,11 +243,68 @@
               <h3>{{ objEvent.event }}</h3>
             </div>
             <div class="date-container">
-              <p>{{ objEvent.day }}</p>
-              <p>{{ objEvent.mounth }}</p>
+              <p class="day">
+                {{ objEvent.day }}
+              </p>
+              <p class="mounth">
+                <strong> {{ objEvent.mounth }}</strong>
+              </p>
               <button>Get ticket</button>
             </div>
           </div>
+        </div>
+        <p class="all-event">
+          Excited about our event?
+          <span>View all events <font-awesome-icon icon="fa-solid fa-arrow-right" /></span>
+        </p>
+      </div>
+    </div>
+    <div class="sixth-section">
+      <div class="container">
+        <div class="title">
+          <p>PEOPLE ARE PRAISING MAXCOACH</p>
+          <h1>What make they <span>love us?</span></h1>
+        </div>
+        <div class="carosello">
+          <div
+            v-for="objRecensione in recensioni"
+            :key="objRecensione.i"
+            class="card"
+          >
+            <img
+              :src="objRecensione.img"
+              alt="foto-profilo"
+            >
+            <p class="recensione">
+              {{ objRecensione.text }}
+            </p>
+            <p class="nome">
+              <strong>{{ objRecensione.name }}</strong>
+            </p>
+            <p class="job">
+              {{ objRecensione.job }}
+            </p>
+          </div>
+        </div>
+        <div class="start">
+          <h2>Start today for getting <span>Online Certification</span></h2>
+          <h1>You can be your own guiding star with our help!</h1>
+          <button><strong>Get started now</strong></button>
+          <img
+            src="images\maxcoach-shape-02.png"
+            alt="small"
+            class="small-one"
+          >
+          <img
+            src="images\maxcoach-shape-02.png"
+            alt="small"
+            class="small-two"
+          >
+          <img
+            src="images\maxcoach-shape-01.png"
+            alt="small"
+            class="small-tre"
+          >
         </div>
       </div>
     </div>
@@ -408,6 +466,44 @@ export default {
           event: 'How meditation improve your mental health',
           day: '12',
           mounth: 'AUG',
+        },
+      ],
+      recensioni: [
+        {
+          img: 'images/testimonial-avata-02.jpg',
+          text: 'I am free to learn at my own pace, follow my own schedule and choose teh subject I like. Great study portal for people like me.',
+          name: 'MINA HOLLACE',
+          job: '/Freelancer',
+        },
+        {
+          img: 'images/testimonial-avata-04.jpg',
+          text: 'MaxCoach is my  best choice. their tutors are smart and professional when dealing with students.',
+          name: 'MADLEY PONDOR',
+          job: '/IT Specialist',
+        },
+        {
+          img: 'images/testimonial-avata-01.jpg',
+          text: 'I am happy with theeir arrangiament of lessons and subjects. They reflect a scientific investigation.',
+          name: 'LUDVIC DUBBLE',
+          job: '/Private Tutor',
+        },
+        {
+          img: 'images/testimonial-avata-03.jpg',
+          text: 'MaxCoach is my  best choice. their tutors are smart and professional when dealing with students.',
+          name: 'MADLEY PONDOR',
+          job: '/IT Specialist',
+        },
+        {
+          img: 'images/73ee246daf47502812ccefc84bf02898 (1).jpeg',
+          text: 'I am free to learn at my own pace, follow my own schedule and choose teh subject I like. Great study portal for people like me.',
+          name: 'MINA HOLLACE',
+          job: '/Freelancer',
+        },
+        {
+          img: 'images/d0d504142acfde820eef2f11feea6253 (1).jpeg',
+          text: 'I am happy with theeir arrangiament of lessons and subjects. They reflect a scientific investigation.',
+          name: 'LUDVIC DUBBLE',
+          job: '/Private Tutor',
         },
       ],
     };
@@ -736,7 +832,7 @@ export default {
       border: 0px;
       padding: 1rem 2rem;
       border-radius: 5px;
-    }
+      }
     }
   }
 
@@ -754,6 +850,153 @@ export default {
         color: #35AE96;
         font-weight: normal;
       }
+    }
+  }
+  .event-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    .card{
+      background-color: #F8F8F8;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex: 0 0 calc(50% - 1rem);
+      .text{
+        flex: 0 0 60%;
+        p{
+          color: gray;
+          font-size: small;
+        }
+        h3{
+          margin-top: .7rem;
+        }
+      }
+      .date-container{
+        text-align: center;
+        .day{
+          color: #35AE96;
+          font-size: 40px;
+        }
+        .mounth{
+          margin: 0 0 .5rem 0 ;
+          font-size: 14px;
+        }
+        button{
+          background-color: #35AE96;
+          color: white;
+          border: 0px;
+          padding: .5rem 2rem;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  //TODO COME FARE LE ONDE PRECISE DI COLORE
+  .all-event{
+    text-align: center;
+    color: gray;
+    margin: 3rem 0;
+    span{
+      color: #35AE96;
+    }
+  }
+}
+.sixth-section{
+  background-color: #F8F8F8;
+  .title{
+    text-align: center;
+    p{
+      color: gray;
+    }
+    h1{
+      color: #3F3A64;
+      font-size: 50px;
+      span{
+        color: #35AE96;
+        font-weight: normal;
+      }
+    }
+  }
+  .carosello{
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    .card{
+      margin-bottom: 5rem;
+      flex: 0 0 calc((100% - 4rem) / 3);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 5px;
+      text-align: center;
+      padding: 0 3rem 3rem 3rem;
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+      img{
+        width: 200px;
+        border-radius: 100%;
+        position: relative;
+        top: -50px;
+      }
+      .recensione{
+        margin-bottom: 2rem;
+      }
+      .name{
+        margin-bottom: 1rem;
+      }
+      .job{
+        padding: 1rem;
+        color: gray;
+      }
+    }
+  }
+  .start{
+    text-align: center;
+    color: #3F3A64;
+    padding-bottom: 7rem;
+    position: relative;
+    h2{
+      font-size: 30px;
+      span{
+        color: #35AE96;
+        font-weight: normal;
+      }
+    }
+    h1{
+      font-size: 50px;
+      margin-bottom: 2rem;
+    }
+    button{
+      background-color: #35AE96;
+      color: white;
+      border: 0px;
+      padding: 1.3rem 6rem;
+      border-radius: 5px;
+    }
+    .small-one{
+      position: absolute;
+      top: 110px;
+      right: -50px;
+    }
+    .small-two{
+      position: absolute;
+      transform: rotate(180deg);
+      height: 80px;
+      top: 0;
+      left: -100px;
+    }
+    .small-tre{
+      position: absolute;
+      top: 100px;
+      left: -70px;
     }
   }
 }
