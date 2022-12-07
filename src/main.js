@@ -5,7 +5,7 @@ import {
   faChevronDown, faDownload, faCircle, faCopyright,
   faCartShopping, faCircleUser, faMagnifyingGlass, faCirclePlus,
   faCircleMinus, faFileLines, faUser, faArrowRight,
-  faCheck, faLocationDot,
+  faCheck, faLocationDot, faArrowUp,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faTwitter, faInstagram, faLinkedin, faSquareFacebook,
@@ -26,6 +26,7 @@ library.add(
   faFileLines,
   faUser,
   faArrowRight,
+  faArrowUp,
   faCheck,
   faLocationDot,
   faTwitter,

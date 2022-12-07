@@ -1,7 +1,10 @@
 <template>
   <main>
     <div class="container">
-      <div class="first-section">
+      <div
+        id="start"
+        class="first-section"
+      >
         <p>START LEARNING CODING LANGUAGES</p>
         <h1 class="section-title">
           Build Your Dream
@@ -26,7 +29,10 @@
           </div>
         </div>
       </div>
-      <div class="second-section">
+      <div
+        id="blog"
+        class="second-section"
+      >
         <div class="second-sec-image">
           <img
             src="images\about-us-03-image-01-215x300.png"
@@ -81,7 +87,10 @@
         </div>
       </div>
     </div>
-    <div class="third-section">
+    <div
+      id="courses"
+      class="third-section"
+    >
       <div class="container">
         <div class="title">
           <p><strong>CHOOSE WHERE YOU'D LIKE TO BEGIN</strong></p>
@@ -259,7 +268,10 @@
         </p>
       </div>
     </div>
-    <div class="sixth-section">
+    <div
+      id="story"
+      class="sixth-section"
+    >
       <div class="container">
         <div class="title">
           <p>PEOPLE ARE PRAISING MAXCOACH</p>
@@ -654,7 +666,7 @@ export default {
       border-radius: 5px;
         &:hover{
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
-          background-color: #F5F5F5;
+          background-color: white;
         }
       .gray{
         color: gray;
@@ -984,7 +996,7 @@ export default {
     .small-one{
       position: absolute;
       top: 110px;
-      right: -50px;
+      right: -30px;
     }
     .small-two{
       position: absolute;
