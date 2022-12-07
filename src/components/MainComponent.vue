@@ -277,6 +277,7 @@
           <p>PEOPLE ARE PRAISING MAXCOACH</p>
           <h1>What make they <span>love us?</span></h1>
         </div>
+        <SliderComponent />
         <div class="carosello">
           <div
             v-for="objRecensione in recensioni"
@@ -324,8 +325,14 @@
 </template>
 
 <script>
+import SliderComponent from '@/components/SliderComponent.vue';
+
 export default {
   name: 'MainComponent',
+  comments: {
+    SliderComponent,
+  },
+  components: { SliderComponent },
   data() {
     return {
       corsi: [
@@ -544,7 +551,7 @@ export default {
     margin-bottom: 5rem;
   }
   span{
-    color: #62C5B5;
+    color: #62C5B5 ;
     font-size: 50px;
   }
   .corsi{
