@@ -34,10 +34,30 @@
     </div>
     <div class="social">
       <ul>
-        <li><a href="!"><font-awesome-icon icon="fa-brands fa-square-facebook" />.</a></li>
-        <li><a href="!"><font-awesome-icon icon="fa-brands fa-twitter" />.</a></li>
-        <li><a href="!"><font-awesome-icon icon="fa-brands fa-instagram" />.</a></li>
-        <li><a href="!"><font-awesome-icon icon="fa-brands fa-linkedin" />.</a></li>
+        <li>
+          <a
+            aria-label="facebook"
+            href="!"
+          ><font-awesome-icon icon="fa-brands fa-square-facebook" /></a>
+        </li>
+        <li>
+          <a
+            aria-label="twitter"
+            href="!"
+          ><font-awesome-icon icon="fa-brands fa-twitter" /></a>
+        </li>
+        <li>
+          <a
+            aria-label="instagram"
+            href="!"
+          ><font-awesome-icon icon="fa-brands fa-instagram" /></a>
+        </li>
+        <li>
+          <a
+            aria-label="linkedin"
+            href="!"
+          ><font-awesome-icon icon="fa-brands fa-linkedin" /></a>
+        </li>
       </ul>
     </div>
     <div class="copyright">
@@ -47,7 +67,8 @@
       <a
         class="scroll-button"
         href="!"
-      ><font-awesome-icon icon="fa-solid fa-arrow-up" />.</a>
+        aria-label="back to top"
+      ><font-awesome-icon icon="fa-solid fa-arrow-up" /></a>
       <!-- TODO COME METTERE I LINK VUOTI CON SOLO LE ICONE ALL INTERNO -->
     </div>
   </footer>
@@ -162,11 +183,15 @@ footer{
     background-color: #35AE96;
     color: white;
     border-radius: 100%;
-    padding: 1rem;
+    height: 40px;
+    width: 40px;
     position: absolute;
     bottom: 20px;
     right: 10px;
     font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &:hover{
       background-color: #3F3A64;
       color: white;

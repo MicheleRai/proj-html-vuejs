@@ -177,6 +177,10 @@ export default {
           padding: 1rem 2rem;
           border: 0;
           border-radius: 7px;
+          &:hover{
+            background-color: #3F3A64;
+            color: white;
+          }
         }
       }
       .jumbo-img{

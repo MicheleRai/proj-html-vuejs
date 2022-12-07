@@ -190,118 +190,113 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  .background {
-  height: 100vh;
-  background-size: cover;
-}
+.background {
+    border-radius: 100%;
+    height: 60vh;
+    background-size: cover;
 
-.container-blur {
-  height: 100%;
-  backdrop-filter: blur(20px);
-}
+  .container-blur {
+    height: 100%;
+    backdrop-filter: blur(20px);
 
-.contents {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  height: 100%;
-}
+    .contents {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      height: 100%;
+      .slider {
+        height: 100%;
+        width: 80%;
+        max-width: 500px;
+        max-height: 600px;
+        background-color: salmon;
+        border: 5px solid white;
+        border-radius: 100%;
 
-.slider {
-  height: 80%;
-  width: 60%;
-  max-width: 600px;
-  max-height: 500px;
-  background-color: salmon;
-  border: 5px solid white;
-}
+        .slider-viewer {
+          position: relative;
+          height: 80%;
 
-.slider .slider-viewer {
-  position: relative;
-  height: 80%;
-}
+          .controls {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            z-index: 10;
+          }
 
-.slider .controls {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  z-index: 10;
-}
+          .btn-left, .btn-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: .5rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 100%;
+            background-color: white;
+          }
 
-.btn-left, .btn-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: .5rem;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 100%;
-  background-color: white;
-}
+          .btn-left:hover, .btn-right:hover {
+            background-color: lightblue;
+            cursor: pointer;
+          }
 
-.btn-left:hover, .btn-right:hover {
-  background-color: lightblue;
-  cursor: pointer;
-}
+          .hidden {
+            visibility: hidden;
+          }
 
-.hidden {
-  visibility: hidden;
-}
+          .slide {
+            position: absolute;
+            inset: 0;
+            display: none;
+            width: 100%;
+            height: 100%;
+          }
 
-.slider .slide {
-  position: absolute;
-  inset: 0;
-  display: none;
-  width: 100%;
-  height: 100%;
-  color: white;
-}
+          .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
 
-.slider .slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
+          .slide .text {
+            position: absolute;
+            bottom: 0 ;
+            padding: 1.5rem;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.584);
+          }
 
-.slider .slide .text {
-  position: absolute;
-  inset: 0;
-  padding: 1.5rem;
-  text-align: right;
-}
+          .slide.active {
+            display: block;
+          }
+        }
+        .thumbs {
+          position: relative;
+          display: flex;
+          height: 20%;
 
-.slider .slide.active {
-  display: block;
-}
+          .thumb-img {
+            flex: 1 0 0;
+            min-width: 0;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(.4);
+          }
 
-.slider .thumbs {
-  position: relative;
-  display: flex;
-  height: 20%;
-}
-
-.slider .thumb-img {
-  flex: 1 0 0;
-  min-width: 0;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: brightness(.4);
-}
-
-.slider .thumb-img.active {
-  border: 5px solid white;
-  filter: brightness(1);
-}
+          .thumb-img.active {
+            border: 5px solid white;
+            filter: brightness(1);
+          }
+        }
+      }
+    }
+  }
 }
 </style>

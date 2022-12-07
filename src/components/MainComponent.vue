@@ -564,6 +564,13 @@ export default {
     a{
     text-decoration: none;
     color: #3F3A64;
+    padding: .6rem .5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    &:hover{
+      background-color: #f0f0f0;
+      color: #62C5B5;
+    }
     }
   }
 }
@@ -724,6 +731,10 @@ export default {
       border: 0px;
       padding: 1.3rem 4rem;
       border-radius: 5px;
+      &:hover{
+      background-color: #3F3A64;
+      color: white;
+    }
     }
   }
 }
@@ -766,6 +777,10 @@ export default {
       padding: 1rem 2rem;
       border-radius: 5px;
       margin-top: 2rem;
+      &:hover{
+      background-color: #3F3A64;
+      color: white;
+    }
       }
     }
     .img-section{
@@ -851,6 +866,10 @@ export default {
       border: 0px;
       padding: 1rem 2rem;
       border-radius: 5px;
+      &:hover{
+      background-color: #3F3A64;
+      color: white;
+    }
       }
     }
   }
@@ -911,6 +930,10 @@ export default {
           border: 0px;
           padding: .5rem 2rem;
           border-radius: 5px;
+          &:hover{
+            background-color: #3F3A64;
+            color: white;
+          }
         }
       }
     }
@@ -999,6 +1022,10 @@ export default {
       border: 0px;
       padding: 1.3rem 6rem;
       border-radius: 5px;
+      &:hover{
+      background-color: #3F3A64;
+      color: white;
+    }
     }
     .small-one{
       position: absolute;
