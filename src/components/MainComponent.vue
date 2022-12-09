@@ -138,7 +138,10 @@
         </div>
       </div>
     </div>
-    <div class="fourth-section">
+    <div
+      id="features"
+      class="fourth-section"
+    >
       <div class="first-container">
         <div class="text">
           <p
@@ -985,7 +988,7 @@ export default {
     margin-top: 5rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
     .card{

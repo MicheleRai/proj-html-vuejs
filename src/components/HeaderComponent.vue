@@ -12,8 +12,8 @@
               v-for="part in navParts"
               :key="part"
             >
-              <a href="!">
-                {{ part }}
+              <a :href="part.url">
+                {{ part.text }}
                 <font-awesome-icon
                   class="icona"
                   icon="fa-solid fa-chevron-down"
@@ -78,7 +78,32 @@ export default {
   name: 'HeaderComponent',
   data() {
     return {
-      navParts: ['Home', 'Pages', 'Courses', 'Features', 'Blog', 'Shop'],
+      navParts: [
+        {
+          url: '#start',
+          text: 'Home',
+        },
+        {
+          url: '#story',
+          text: 'Pages',
+        },
+        {
+          url: '#courses',
+          text: 'Courses',
+        },
+        {
+          url: '#features',
+          text: 'Features',
+        },
+        {
+          url: '#blog',
+          text: 'Blog',
+        },
+        {
+          url: '#courses',
+          text: 'Shop',
+        },
+      ],
       carrello: 0,
     };
   },
@@ -113,7 +138,7 @@ export default {
           color: #3F3A64;
           .icona{
             margin-left: .2rem;
-            font-size: 15px;
+            font-size: 10px;
           }
           p{
             display: none;
