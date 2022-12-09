@@ -1,69 +1,70 @@
 <template>
-  <div
-    class="background"
-  >
-    <div class="container-blur">
-      <div class="contents">
-        <div
-          class="slider"
-          @mouseenter="pauseAutoplay"
-          @focusin="pauseAutoplay"
-          @mouseleave="resumeAutoplay"
-          @focusout="resumeAutoplay"
-        >
-          <div class="slider-viewer">
-            <div class="controls">
-              <button
-                class="btn-left"
-                @click="changeSlide(-1)"
-              >
-                &lt;
-              </button>
-              <button
-                class="btn-right"
-                @click="changeSlide(1)"
-              >
-                &gt;
-              </button>
-            </div>
+  <div class="duble-container">
+    <div
+      class="background"
+    >
+      <div class="container-blur">
+        <div class="contents">
+          <div
+            class="slider"
+            @mouseenter="pauseAutoplay"
+            @focusin="pauseAutoplay"
+            @mouseleave="resumeAutoplay"
+            @focusout="resumeAutoplay"
+          >
+            <div class="slider-viewer">
+              <div class="controls">
+                <button
+                  class="btn-left"
+                  @click="changeSlide(-1)"
+                >
+                  &lt;
+                </button>
+                <button
+                  class="btn-right"
+                  @click="changeSlide(1)"
+                >
+                  &gt;
+                </button>
+              </div>
 
-            <div
-              v-for="(objRecensione, i) in recensioni"
-              :key="objRecensione.i"
-              class="slide"
-              :class="i === activeIndex ? 'active' : ''"
-            >
-              <img
-                :src="(objRecensione.img)"
-                :alt="objRecensione.i"
+              <div
+                v-for="(objRecensione, i) in recensioni"
+                :key="objRecensione.i"
+                class="slide"
+                :class="i === activeIndex ? 'active' : ''"
               >
-              <div class="text">
-                <p class="recensione">
-                  {{ objRecensione.text }}
-                </p>
-                <p class="nome">
-                  <strong>{{ objRecensione.name }}</strong>
-                </p>
-                <p class="job">
-                  {{ objRecensione.job }}
-                </p>
+                <img
+                  :src="(objRecensione.img)"
+                  :alt="objRecensione.i"
+                >
+                <div class="text">
+                  <p class="recensione">
+                    {{ objRecensione.text }}
+                  </p>
+                  <p class="nome">
+                    <strong>{{ objRecensione.name }}</strong>
+                  </p>
+                  <p class="job">
+                    {{ objRecensione.job }}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="thumbs">
-            <img
-              v-for="(objRecensione, i) in recensioni"
-              :key="objRecensione.i"
-              :src="(objRecensione.img)"
-              class="thumb-img"
-              :class="{active: i === activeIndex}"
-              alt="thumbs"
-              @click="setActiveIndex(i)"
-              @keypress="setActiveIndex(i)"
-            >
+            <div class="thumbs">
+              <img
+                v-for="(objRecensione, i) in recensioni"
+                :key="objRecensione.i"
+                :src="(objRecensione.img)"
+                class="thumb-img"
+                :class="{active: i === activeIndex}"
+                alt="thumbs"
+                @click="setActiveIndex(i)"
+                @keypress="setActiveIndex(i)"
+              >
+            </div>
           </div>
-        </div>
 
         <!-- <div class="btns">
           <button
@@ -79,6 +80,92 @@
             Invert
           </button>
         </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="new-container">
+      <div
+        class="background"
+      >
+        <div class="container-blur">
+          <div class="contents">
+            <div
+              class="slider"
+              @mouseenter="pauseAutoplay"
+              @focusin="pauseAutoplay"
+              @mouseleave="resumeAutoplay"
+              @focusout="resumeAutoplay"
+            >
+              <div class="slider-viewer">
+                <div class="controls">
+                  <button
+                    class="btn-left"
+                    @click="changeSlide(-1)"
+                  >
+                    &lt;
+                  </button>
+                  <button
+                    class="btn-right"
+                    @click="changeSlide(1)"
+                  >
+                    &gt;
+                  </button>
+                </div>
+
+                <div
+                  v-for="(objRecensione, i) in recensioni"
+                  :key="objRecensione.i"
+                  class="slide"
+                  :class="i === activeIndex ? 'active' : ''"
+                >
+                  <img
+                    :src="(objRecensione.img)"
+                    :alt="objRecensione.i"
+                  >
+                  <div class="text">
+                    <p class="recensione">
+                      {{ objRecensione.text }}
+                    </p>
+                    <p class="nome">
+                      <strong>{{ objRecensione.name }}</strong>
+                    </p>
+                    <p class="job">
+                      {{ objRecensione.job }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="thumbs">
+                <img
+                  v-for="(objRecensione, i) in recensioni"
+                  :key="objRecensione.i"
+                  :src="(objRecensione.img)"
+                  class="thumb-img"
+                  :class="{active: i === activeIndex}"
+                  alt="thumbs"
+                  @click="setActiveIndex(i)"
+                  @keypress="setActiveIndex(i)"
+                >
+              </div>
+            </div>
+
+            <!-- <div class="btns">
+          <button
+            class="btn-start-stop"
+            @click="controlAutoplay"
+          >
+            {{ isAutoplayActive ? 'STOP' : 'START' }}
+          </button>
+          <button
+            class="btn-invert"
+            @click="invertAutoplay"
+          >
+            Invert
+          </button>
+        </div> -->
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -190,90 +277,202 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.background {
+.duble-container{
+  .background {
     border-radius: 100%;
     height: 60vh;
     background-size: cover;
 
-  .container-blur {
-    height: 100%;
-    backdrop-filter: blur(20px);
-
-    .contents {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
+    .container-blur {
       height: 100%;
-      .slider {
+      backdrop-filter: blur(20px);
+
+      .contents {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
         height: 100%;
-        width: 80%;
-        max-width: 500px;
-        max-height: 600px;
-        background-color: salmon;
-        border: 5px solid white;
-        border-radius: 100%;
+        .slider {
+          height: 100%;
+          width: 80%;
+          max-width: 500px;
+          max-height: 600px;
+          background-color: salmon;
+          border: 5px solid white;
+          border-radius: 100%;
 
-        .slider-viewer {
-          position: relative;
-          height: 80%;
+          .slider-viewer {
+            position: relative;
+            height: 80%;
 
-          .controls {
-            position: absolute;
-            inset: 0;
+            .controls {
+              position: absolute;
+              inset: 0;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              height: 100%;
+              z-index: 10;
+            }
+
+            .btn-left, .btn-right {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin: .5rem;
+              width: 2rem;
+              height: 2rem;
+              border-radius: 100%;
+              background-color: white;
+            }
+
+            .btn-left:hover, .btn-right:hover {
+              background-color: lightblue;
+              cursor: pointer;
+            }
+
+            .hidden {
+              visibility: hidden;
+            }
+
+            .slide {
+              position: absolute;
+              inset: 0;
+              display: none;
+              width: 100%;
+              height: 100%;
+            }
+
+            .slide img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            }
+
+            .slide .text {
+              position: absolute;
+              bottom: 0 ;
+              padding: 1.5rem;
+              text-align: center;
+              background-color: rgba(255, 255, 255, 0.584);
+            }
+
+            .slide.active {
+              display: block;
+            }
+          }
+          .thumbs {
+            position: relative;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-            z-index: 10;
-          }
+            height: 20%;
 
-          .btn-left, .btn-right {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: .5rem;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 100%;
-            background-color: white;
-          }
+            .thumb-img {
+              flex: 1 0 0;
+              min-width: 0;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+              filter: brightness(.4);
+            }
 
-          .btn-left:hover, .btn-right:hover {
-            background-color: lightblue;
-            cursor: pointer;
+            .thumb-img.active {
+              border: 5px solid white;
+              filter: brightness(1);
+            }
           }
+        }
+      }
+    }
+  }
+  .carosello{
+    .background {
+    border-radius: 100%;
+    height: 60vh;
+    background-size: cover;
 
-          .hidden {
-            visibility: hidden;
-          }
+    .container-blur {
+      height: 100%;
+      backdrop-filter: blur(20px);
 
-          .slide {
-            position: absolute;
-            inset: 0;
-            display: none;
-            width: 100%;
-            height: 100%;
-          }
+      .contents {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        height: 100%;
+        .slider {
+          height: 100%;
+          width: 80%;
+          max-width: 500px;
+          max-height: 600px;
+          background-color: salmon;
+          border: 5px solid white;
+          border-radius: 100%;
 
-          .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-          }
+          .slider-viewer {
+            position: relative;
+            height: 80%;
 
-          .slide .text {
-            position: absolute;
-            bottom: 0 ;
-            padding: 1.5rem;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.584);
-          }
+            .controls {
+              position: absolute;
+              inset: 0;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              height: 100%;
+              z-index: 10;
+            }
 
-          .slide.active {
-            display: block;
+            .btn-left, .btn-right {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin: .5rem;
+              width: 2rem;
+              height: 2rem;
+              border-radius: 100%;
+              background-color: white;
+            }
+
+            .btn-left:hover, .btn-right:hover {
+              background-color: lightblue;
+              cursor: pointer;
+            }
+
+            .hidden {
+              visibility: hidden;
+            }
+
+            .slide {
+              position: absolute;
+              inset: 0;
+              display: none;
+              width: 100%;
+              height: 100%;
+            }
+
+            .slide img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            }
+
+            .slide .text {
+              position: absolute;
+              bottom: 0 ;
+              padding: 1.5rem;
+              text-align: center;
+              background-color: rgba(255, 255, 255, 0.584);
+            }
+
+            .slide.active {
+              display: block;
+            }
           }
         }
         .thumbs {
@@ -295,6 +494,42 @@ export default {
             filter: brightness(1);
           }
         }
+
+      }
+    }
+  }
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    .card{
+      margin-bottom: 5rem;
+      flex: 0 0 calc((100% - 4rem) / 3);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 5px;
+      text-align: center;
+      padding: 0 3rem 3rem 3rem;
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
+      img{
+        width: 200px;
+        border-radius: 100%;
+        position: relative;
+        top: -50px;
+      }
+      .recensione{
+        margin-bottom: 2rem;
+      }
+      .name{
+        margin-bottom: 1rem;
+      }
+      .job{
+        padding: 1rem;
+        color: gray;
       }
     }
   }

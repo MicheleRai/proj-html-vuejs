@@ -298,6 +298,15 @@
               {{ objRecensione.job }}
             </p>
           </div>
+          <div class="tumb">
+            <font-awesome-icon
+              class="active"
+              icon="fa-solid fa-circle"
+            />
+            <font-awesome-icon icon="fa-solid fa-circle" />
+            <font-awesome-icon icon="fa-solid fa-circle" />
+            <font-awesome-icon icon="fa-solid fa-circle" />
+          </div>
         </div>
         <div class="start">
           <h2>Start today for getting <span>Online Certification</span></h2>
@@ -506,24 +515,29 @@ export default {
           name: 'LUDVIC DUBBLE',
           job: '/Private Tutor',
         },
-        {
-          img: 'images/testimonial-avata-03.jpg',
-          text: 'MaxCoach is my  best choice. their tutors are smart and professional when dealing with students.',
-          name: 'MADLEY PONDOR',
-          job: '/IT Specialist',
-        },
-        {
-          img: 'images/73ee246daf47502812ccefc84bf02898 (1).jpeg',
-          text: 'I am free to learn at my own pace, follow my own schedule and choose teh subject I like. Great study portal for people like me.',
-          name: 'MINA HOLLACE',
-          job: '/Freelancer',
-        },
-        {
-          img: 'images/d0d504142acfde820eef2f11feea6253 (1).jpeg',
-          text: 'I am happy with theeir arrangiament of lessons and subjects. They reflect a scientific investigation.',
-          name: 'LUDVIC DUBBLE',
-          job: '/Private Tutor',
-        },
+        // {
+        //   img: 'images/testimonial-avata-03.jpg',
+        //   text:
+        //          'MaxCoach is my  best choice.
+        //             their tutors are smart and professional when dealing with students.',
+        //   name: 'MADLEY PONDOR',
+        //   job: '/IT Specialist',
+        // },
+        // {
+        //   img: 'images/73ee246daf47502812ccefc84bf02898 (1).jpeg',
+        //   text: 'I am free to learn at my own pace,
+        //          follow my own schedule and choose teh subject I like.
+        //          Great study portal for people like me.',
+        //   name: 'MINA HOLLACE',
+        //   job: '/Freelancer',
+        // },
+        // {
+        //   img: 'images/d0d504142acfde820eef2f11feea6253 (1).jpeg',
+        //   text: 'I am happy with theeir arrangiament of lessons and subjects.
+        //           They reflect a scientific investigation.',
+        //   name: 'LUDVIC DUBBLE',
+        //   job: '/Private Tutor',
+        // },
       ],
     };
   },
@@ -975,7 +989,7 @@ export default {
     gap: 2rem;
     flex-wrap: wrap;
     .card{
-      margin-bottom: 5rem;
+      margin-bottom: 2rem;
       flex: 0 0 calc((100% - 4rem) / 3);
       display: flex;
       align-items: center;
@@ -1000,6 +1014,20 @@ export default {
       .job{
         padding: 1rem;
         color: gray;
+      }
+    }
+    .tumb{
+      text-align: center;
+      flex: 0 0 100%;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5rem;
+      color: rgb(172, 172, 172);
+      .active{
+        color: #3F3A64;
+        font-size: 1.5rem;
       }
     }
   }
