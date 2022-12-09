@@ -67,7 +67,6 @@
         href="!"
         aria-label="back to top"
       ><font-awesome-icon icon="fa-solid fa-arrow-up" /></a>
-      <!-- TODO COME METTERE I LINK VUOTI CON SOLO LE ICONE ALL INTERNO -->
     </div>
   </footer>
 </template>
@@ -75,7 +74,6 @@
 <script>
 export default {
   name: 'FooterComponent',
-  // TODO  CAPIRE COME ITERARE QUI DENTRO
   data() {
     return {
       footerData: {

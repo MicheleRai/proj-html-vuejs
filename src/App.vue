@@ -2,6 +2,13 @@
   <body>
     <HeaderComponent />
     <MainComponent />
+    <div class="scroll">
+      <a
+        class="scroll-button-one"
+        href="!"
+        aria-label="back to top"
+      ><font-awesome-icon icon="fa-solid fa-arrow-up" /></a>
+    </div>
     <FooterComponent />
   </body>
 </template>
@@ -28,6 +35,29 @@ export default {
 
   body {
     font-family: 'Roboto', sans-serif;
+    .scroll{
+      position: -webkit-sticky;
+      position: sticky;
+      bottom: 2rem;
+      margin-left: 90vw;
+      margin-top: 2rem;
+      text-align: end;
+      .scroll-button-one{
+        background-color: #35AE96;
+        color: white;
+        border-radius: 100%;
+        height: 40px;
+        width: 40px;
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover{
+          background-color: #3F3A64;
+          color: white;
+        }
+      }
+    }
   }
   margin: 0;
   padding: 0;
@@ -36,6 +66,7 @@ export default {
   .container{
   max-width: 1200px;
   margin: auto;
+
   }
 }
 </style>
