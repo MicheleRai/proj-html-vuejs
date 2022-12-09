@@ -4,31 +4,29 @@
       <div class="address">
         <h3>Address</h3>
         <ul>
-          <li>382 NE 191st ST * 87394 Miami, FL 33179-3899</li>
-          <li>+1(305)547-9909 |9am-5pmEST, Monday-Friday|</li>
-          <li>support@maxcoach.com</li>
+          <li>{{ footerData.address.adr }}</li>
+          <li>{{ footerData.address.phone }} |{{ footerData.address.openDay }}|</li>
+          <li>{{ footerData.address.email }}</li>
         </ul>
       </div>
     </div>
     <div class="right">
       <div class="explore">
         <h3>Explore</h3>
-        <ul>
-          <li><a href="#start">Start here</a></li>
-          <li><a href="#story">Success story</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#courses">Courses</a></li>
-          <li><a href="#us">About us</a></li>
-          <li><a href="#us">Contact us</a></li>
+        <ul
+          v-for="objExplore in footerData.explore"
+          :key="objExplore.i"
+        >
+          <li><a :href="objExplore.url">{{ objExplore.text }}</a></li>
         </ul>
       </div>
       <div class="information">
         <h3>Information</h3>
-        <ul>
-          <li><a href="!">Membership</a></li>
-          <li><a href="!">Purchase guide</a></li>
-          <li><a href="!">Privacy policy</a></li>
-          <li><a href="!">Terms of services</a></li>
+        <ul
+          v-for="objInfo in footerData.information"
+          :key="objInfo.i"
+        >
+          <li><a :href="objInfo.url">{{ objInfo.text }}</a></li>
         </ul>
       </div>
     </div>
@@ -80,33 +78,62 @@ export default {
   // TODO  CAPIRE COME ITERARE QUI DENTRO
   data() {
     return {
-      footerData: [
-        {
-          address: [
-            '382 NE 191st ST * 87394 Miami, FL 33179-3899',
-            '+1(305)547-9909 |9am-5pmEST, Monday-Friday|',
-            'support@maxcoach.com',
-          ],
+      footerData: {
+
+        address: {
+          adr: '382 NE 191st ST * 87394 Miami, FL 33179-3899',
+          phone: '+1(305)547-9909',
+          openDay: '9am-5pmEST, Monday-Friday',
+          email: 'support@maxcoach.com',
         },
-        {
-          explore: [
-            'Start here',
-            'Success story',
-            'Blog',
-            'Courses',
-            'About us',
-            'Contact us',
-          ],
-        },
-        {
-          information: [
-            'Membership',
-            'Purchase guide',
-            'Privacy policy',
-            'Terms of services',
-          ],
-        },
-      ],
+
+        explore: [
+          {
+            url: '#start',
+            text: 'Start here',
+          },
+          {
+            url: '#story',
+            text: 'Success story',
+          },
+          {
+            url: '#blog',
+            text: 'Blog',
+          },
+          {
+            url: '#courses',
+            text: 'Courses',
+          },
+          {
+            url: '#us',
+            text: 'About us',
+          },
+          {
+            url: '#us',
+            text: 'Contact us',
+          },
+        ],
+
+        information: [
+          {
+            url: '!',
+            text: 'Membership',
+          },
+          {
+            url: '!',
+            text: 'Purchase guide',
+          },
+          {
+            url: '!',
+            text: 'Privacy policy',
+          },
+          {
+            url: '!',
+            text: 'Terms of services',
+          },
+        ],
+
+      },
     };
   },
 };
