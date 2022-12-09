@@ -904,6 +904,10 @@ export default {
       align-items: center;
       justify-content: space-between;
       flex: 0 0 calc(50% - 1rem);
+      border-left: 4px solid #F8F8F8;
+      &:hover{
+        border-left:4px solid #35AE96;
+      }
       .text{
         flex: 0 0 60%;
         p{
@@ -938,7 +942,6 @@ export default {
       }
     }
   }
-  //TODO COME FARE LE ONDE PRECISE DI COLORE
   .all-event{
     text-align: center;
     color: gray;
